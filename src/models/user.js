@@ -70,7 +70,7 @@ const User = sequelize.define('User', {
         allowNull: false
     }
 }, {
-    tableName: 'Users',
+    tableName: 'users',
     timestamps: false
 });
 

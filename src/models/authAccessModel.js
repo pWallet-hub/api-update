@@ -19,7 +19,8 @@ const AuthUser = sequelize.define('AuthUser', {
         allowNull: false
     }
 }, {
-    tableName: 'AuthUsers'
+    tableName: 'authusers',
+    timestamps: false
 });
 
 module.exports = { AuthUser, sequelize }

@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
-const { sequelize } = require('./models/User');
+const { sequelize } = require('./models/user');
 const { swaggerUi, specs } = require('./swagger');
 
 const app = express();

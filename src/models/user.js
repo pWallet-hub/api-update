@@ -66,7 +66,7 @@ const User = sequelize.define('User', {
         allowNull: true // Not mandatory
     },
     assistance: {
-        type: DataTypes.STRING,
+        type: DataTypes.ARRAY(DataTypes.STRING), 
         allowNull: false
     }
 }, {

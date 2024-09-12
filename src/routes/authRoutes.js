@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
-
+const { authenticate } = require('../middleware/authMiddleware');
 /**
  * @swagger
  * tags:
@@ -42,6 +42,7 @@ const authController = require('../controllers/authController');
  *       400:
  *         description: Bad request
  */
+
 router.post('/register', authController.register);
 
 /**
@@ -74,6 +75,7 @@ router.post('/register', authController.register);
  *       400:
  *         description: Bad request
  */
+
 router.post('/login', authController.login);
 
 module.exports = router;

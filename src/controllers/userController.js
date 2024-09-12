@@ -10,6 +10,8 @@ exports.createUser = async (req, res) => {
     }
 };
 
+
+
 // Get all users
 exports.getUsers = async (req, res) => {
     try {
@@ -19,6 +21,7 @@ exports.getUsers = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
 
 // Get a specific user by ID
 exports.getUser = async (req, res) => {
@@ -34,6 +37,8 @@ exports.getUser = async (req, res) => {
     }
 };
 
+
+
 // Update user
 exports.updateUser = async (req, res) => {
     try {
@@ -48,6 +53,8 @@ exports.updateUser = async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 };
+
+
 
 // Delete user
 exports.deleteUser = async (req, res) => {

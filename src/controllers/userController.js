@@ -1,12 +1,19 @@
 const { User } = require('../models/user');
 
+
 // Create a new user
 exports.createUser = async (req, res) => {
     try {
         const newUser = await User.create(req.body);
         res.status(201).json(newUser);
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        if (error.name === 'SequelizeValidationError') {
+            const validationErrors = error.errors.map(err => err.message);
+            console.log(validationErrors);
+            res.status(400).json({ error: validationErrors });
+        } else {
+            res.status(400).json({ error: error.message });
+        }
     }
 };
 

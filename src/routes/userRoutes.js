@@ -1,6 +1,9 @@
 const express = require('express');
 const { createUser, getUsers, getUser, updateUser, deleteUser } = require('../controllers/userController');
 const { authenticate, authorize } = require('../middleware/authMiddleware');
+
+
+
 const router = express.Router();
 
 /**
@@ -128,9 +131,7 @@ const router = express.Router();
  *       500:
  *         description: Internal server error.
  */
-
-// Only admin users can create, update, and delete users
-router.post('/users', authenticate, authorize(['admin']), createUser);
+router.post('/users', createUser);
 router.get('/users', authenticate, getUsers);
 router.get('/users/:id', authenticate, getUser);
 router.put('/users/:id', authenticate, authorize(['admin']), updateUser);

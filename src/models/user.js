@@ -15,21 +15,19 @@ const User = sequelize.define('User', {
     },
     telephone: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            len: [10, 10]
+        }
     },
     idnumber: {
-        type: DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            len: [16, 16]
+        }
     },
-    village: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    cell: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    sector: {
+    province: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -37,7 +35,35 @@ const User = sequelize.define('User', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    province: {
+    sector: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    cell: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    village: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    farm_province: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    farm_district: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    farm_sector: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    farm_cell: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    farm_village: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -47,11 +73,11 @@ const User = sequelize.define('User', {
     },
     avocadotype: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true // Only required if planted is 'yego'
     },
     mixedpercentage: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true // Only required if avocadotype is 'bivanze'
     },
     farmsize: {
         type: DataTypes.STRING,
@@ -66,7 +92,7 @@ const User = sequelize.define('User', {
         allowNull: true // Not mandatory
     },
     assistance: {
-        type: DataTypes.ARRAY(DataTypes.STRING), 
+        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: false
     }
 }, {

@@ -73,7 +73,7 @@ const User = sequelize.define('User', {
     },
     farm_age: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true
     },
     planted: {
         type: DataTypes.STRING,

@@ -20,6 +20,10 @@ const User = sequelize.define('User', {
             len: [10, 10]
         }
     },
+    age: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     idnumber: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -65,6 +69,10 @@ const User = sequelize.define('User', {
     },
     farm_village: {
         type: DataTypes.STRING,
+        allowNull: false
+    },
+    farm_age: {
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     planted: {
